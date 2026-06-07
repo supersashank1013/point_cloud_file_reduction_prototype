@@ -1,0 +1,16 @@
+.idea/
+.vscode/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.DS_Store
+*.log
+
+# Keep only project data, output, and main script tracked
+!data/
+!output/
+!main.py
