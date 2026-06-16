@@ -1,22 +1,24 @@
 import open3d as o3d  ## import the libraries to use
 
 # # Original file read it
-# pcd = o3d.io.read_point_cloud("data/sample.ply")
-# print("Original:",len(pcd.points))
+pcd = o3d.io.read_point_cloud("data/Bobcat Skid-Steer Loader.ply")
+print("Original:",len(pcd.points))
+
 #
 # # Reduce the ply to some extent without losing the identity of the ply
-# reduced_pcd = pcd.voxel_down_sample(voxel_size=0.005)
-# print("Reduced:",len(reduced_pcd.points))
+reduced_pcd = pcd.voxel_down_sample(voxel_size=50)
+print("Reduced:",len(reduced_pcd.points))
 # #
+
 # # Save the reduced file in the required directory
-# o3d.io.write_point_cloud("output/reduced.ply", reduced_pcd)
+o3d.io.write_point_cloud("output/reducedbobcat.ply", reduced_pcd)
 #
 # # this statement is to check wheather there are no code errors
 # print("Reduced Point Cloud file saved!")
 
 # Render the 3D models to compare visually
-# O3D.visualization.draw_geometries([pcd])
-# O3D.visualization.draw_geometries([reduced_pcd])
+o3d.visualization.draw_geometries([pcd])
+o3d.visualization.draw_geometries([reduced_pcd])
 
 def reduce_point_cloud(input_file, output_file, voxel_size):
     if voxel_size <= 0 :
