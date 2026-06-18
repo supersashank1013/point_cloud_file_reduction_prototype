@@ -9,6 +9,8 @@ __pycache__/
 *.swo
 *.DS_Store
 *.log
+**/uploads/fused.ply
+**/uploads/
 
 # Keep only project data, output, and main script tracked
 !data/
