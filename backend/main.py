@@ -20,7 +20,7 @@ def health():
     }
 
 @app.post("/reduce")
-async def reduce(file: UploadFile = File(...), voxel_size: float = 0.05):
+async def reduce(file: UploadFile = File(...), voxel_size: float = File(...)):
     upload_path = f"uploads/{file.filename}"
     output_path = f"output/reduced_{file.filename}"
     
